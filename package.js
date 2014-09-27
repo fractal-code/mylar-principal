@@ -6,10 +6,10 @@ Package.on_use(function (api) {
 
     var where = ['client', 'server'];
 
-    api.use(['standard-app-packages', 'accounts-base', 'basic-crypto', 'ejson', 'timing', 'http', 'async'],
+    api.use(['standard-app-packages', 'accounts-base', 'mylar:basic-crypto', 'ejson', 'mylar:timing', 'http', 'mylar:async'],
 	    where);
 
-    api.imply(['standard-app-packages', 'timing', 'async', 'basic-crypto']);
+    api.imply(['standard-app-packages', 'mylar:timing', 'mylar:async', 'mylar:basic-crypto']);
     api.add_files(['graphmodel.js', 'certs.js', 'principal.js', 'collection_hook.js'], where);
 
     // TODO: just export one variable containing all these
