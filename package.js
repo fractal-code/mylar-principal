@@ -1,16 +1,12 @@
 Package.describe({
-    summary: "Principal graph",
+    summary: "Principal graph"
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
+    api.use(['meteor-platform', 'accounts-base', 'mylar:basic-crypto', 'ejson', 'mylar:timing', 'http', 'mylar:async'], ['client', 'server']);
 
-    var where = ['client', 'server'];
-
-    api.use(['standard-app-packages', 'accounts-base', 'mylar:basic-crypto', 'ejson', 'mylar:timing', 'http', 'mylar:async'],
-	    where);
-
-    api.imply(['standard-app-packages', 'mylar:timing', 'mylar:async', 'mylar:basic-crypto']);
-    api.add_files(['graphmodel.js', 'certs.js', 'principal.js', 'collection_hook.js'], where);
+    api.imply(['mylar:timing', 'mylar:async', 'mylar:basic-crypto']);
+    api.addFiles(['graphmodel.js', 'certs.js', 'principal.js', 'collection_hook.js'], ['client', 'server']);
 
     // TODO: just export one variable containing all these
     api.export("Principal");
