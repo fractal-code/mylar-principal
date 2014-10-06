@@ -96,10 +96,9 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
-    Deps.autorun(function(){
-	Meteor.subscribe("princtype");
+    Tracker.autorun(function(){
+        Meteor.subscribe("princtype");
     });
-
 }
 
 // subscriptions for which we don't need decryption
