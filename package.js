@@ -1,6 +1,7 @@
 Package.describe({
     summary: "Principal graph",
     name: "mylar:principal",
+    version: "0.0.1",
     git: "https://github.com/gliesesoftware/mylar-principal.git"
 });
 
