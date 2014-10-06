@@ -34,11 +34,11 @@ rand_field_name = function(f) {
 
 
 
-Meteor.Collection.prototype._encrypted_fields = function(lst) {
+Mongo.Collection.prototype._encrypted_fields = function(lst) {
     this._enc_fields = _process_enc_fields(this._enc_fields, lst);
 }
 
-Meteor.Collection.prototype._immutable = function(annot) {
+Mongo.Collection.prototype._immutable = function(annot) {
   
     this._im_rings = annot;
 }
@@ -594,7 +594,7 @@ function runWhenDecrypted(subname, f) {
   on_ready: should be run with the ready function for a subscription;
   when the intercept code finished running, it will call the ready function
 */
-Meteor.Collection.intercept = 
+Mongo.Collection.intercept = 
 {
     init: intercept_init,
     incoming: dec_msg,

@@ -1,4 +1,4 @@
-Principals = new Meteor.Collection("princs");
+Principals = new Mongo.Collection("princs");
 /*
   id : unique over all principals (currently, serialized public keys)
   name
@@ -7,7 +7,7 @@ Principals = new Meteor.Collection("princs");
                symmetric key access
   */
 
-WrappedKeys = new Meteor.Collection("wrapped_keys");
+WrappedKeys = new Mongo.Collection("wrapped_keys");
 /* principal: princ.id
    wrapped_for : princ.id -- the id of the princ that gets new access
    wrapped_keys : wrapped secret asymmetric keys
@@ -18,7 +18,7 @@ WrappedKeys = new Meteor.Collection("wrapped_keys");
    Currently computing delta for any edge.
 */
    
-Certs = new Meteor.Collection("certs");
+Certs = new Mongo.Collection("certs");
 /*
   subject_id : princ id
   subject_type
@@ -28,7 +28,7 @@ Certs = new Meteor.Collection("certs");
   signature
  */
 
-PrincType = new Meteor.Collection("princtype");
+PrincType = new Mongo.Collection("princtype");
 /*
   Information on principal type:
   type
@@ -36,7 +36,7 @@ PrincType = new Meteor.Collection("princtype");
  */
 
 
-IndexEnc = new Meteor.Collection("indexenc");
+IndexEnc = new Mongo.Collection("indexenc");
 /*
   An index used for search
   only contains an _id
