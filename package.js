@@ -6,6 +6,8 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
+    api.versionsFrom('METEOR@0.9.1');
+
     api.use(['meteor-platform', 'http', 'accounts-base', 'mylar:basic-crypto', 'mylar:timing', 'mylar:async'], ['client', 'server']);
 
     api.imply(['mylar:timing', 'mylar:async', 'mylar:basic-crypto']);
