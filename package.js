@@ -8,7 +8,8 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('METEOR@0.9.1');
 
-    api.use(['meteor-platform', 'http', 'accounts-base', 'mylar:basic-crypto', 'mylar:timing', 'mylar:async'], ['client', 'server']);
+    api.use(['meteor-platform', 'http', 'accounts-base'], ['client', 'server']);
+    api.use(['mylar:basic-crypto', 'mylar:timing', 'mylar:async'], ['client', 'server']);
 
     api.addFiles(['graphmodel.js', 'certs.js', 'principal.js', 'collection_hook.js'], ['client', 'server']);
 
